@@ -2,6 +2,8 @@
 # Lab 01: Buffer Overflow
 # Task 1: Stack smashing by memory overwritten
 ## 1.1. bof1.c 
+![Alt text](./images/1.1.1.png)
+
 [[Ảnh 1.1.1](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.1.png)
 
@@ -11,21 +13,28 @@
 - Find the memory address of the secretFunc() function to overwrite the return address of the stack.
 ### Operation:
 #### Step 1: Compile with GCC without stack protection and use some parameters to make the assembly code more readable.
+![Alt text](./images/1.1.2.png)
 [[Ảnh 1.1.2](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.2.png)
 #### Step 2: Find the memory address of secretFunc() using GDB.
+![Alt text](./images/1.1.3.png)
 [[Ảnh 1.1.3](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.3.png)
 
 The memory address of function secretFunc: 804846b => 0804846b => \x6b\x84\x04\x08.
 #### Step3: Generate a buffer overflow with python scripting
+![Alt text](./images/1.1.4.png)
+
 [[Ảnh 1.1.4](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.4.png)
 #### Result:
+![Alt text](./images/1.1.5.png)
+
 [[Ảnh 1.1.5](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 
 ## 1.2. bof2.c 
+![Alt text](./images/1.2.1.png)
 [[Ảnh 1.2.1](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.1.png)
 
@@ -39,36 +48,47 @@ The memory address of function secretFunc: 804846b => 0804846b => \x6b\x84\x04\x
     Carry out a buffer overflow with 40 bytes trash and 4 byte with the exact pattern “deadbeef” changing the value of variable check
 ### Operation of case 1:
 #### Step1: Compile gcc with no stack protector and some assembly code beautify referrence
+![Alt text](./images/1.2.2.png)
+
 [[Ảnh 1.2.2](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.2.png)
 #### Step 2: Generate a buffer overflow supported by fgets with 40 bytes trash and 4 random byte changing the value of variable check
+![Alt text](./images/1.2.3.png)
+
 [[Ảnh 1.2.3](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.3.png)
 
 Note: “\x11\x22\x33\x44” is a random value
 #### Step3: Generate a buffer overflow with python scripting
+![Alt text](./images/1.2.4.png)
 [[Ảnh 1.2.4](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.4.png)
 #### Result:
+![Alt text](./images/1.2.5.png)
 [[Ảnh 1.2.5](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 ### Operation of case 2:
 #### Step1: Compile gcc with no stack protector and some assembly code beautify referrence
-[[Ảnh 1.2.2](http://https://vi.wikipedia.org/wiki/Markdown)
+![Alt text](./images/1.2.6.png)
+[[Ảnh 1.2.6](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.2.png)
 #### Step 2: Generate a buffer overflow supported by fgets with 40 bytes trash 4 byte with the exact pattern “deadbeef” changing the value of variable check
-[[Ảnh 1.2.3](http://https://vi.wikipedia.org/wiki/Markdown)
+![Alt text](./images/1.2.7.png)
+[[Ảnh 1.2.7](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.3.png)
 
 Note: “\x11\x22\x33\x44” is a random value
 #### Step3: Generate a buffer overflow with python scripting
-[[Ảnh 1.2.4](http://https://vi.wikipedia.org/wiki/Markdown)
+![Alt text](./images/1.2.8.png)
+[[Ảnh 1.2.8](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.4.png)
 #### Result:
-[[Ảnh 1.2.5](http://https://vi.wikipedia.org/wiki/Markdown)
+![Alt text](./images/1.2.9.png)
+[[Ảnh 1.2.9](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 
 ## 1.3. bof3.c 
+![Alt text](./images/1.3.1.png)
 [[Ảnh 1.3.1](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.1.png)
 
@@ -78,22 +98,28 @@ Note: “\x11\x22\x33\x44” is a random value
 - Find the memory address of shell() in order to paste to the return address of the stack
 ### Operation:
 #### Step 1: Compile with GCC without stack protection and use some parameters to make the assembly code more readable.
+![Alt text](./images/1.3.2.png)
 [[Ảnh 1.3.2](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.2.png)
 #### Step 2: Find the memory address of shell() using GDB.
+![Alt text](./images/1.3.3.png)
 [[Ảnh 1.3.3](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.3.png)
 
 The memory address of function secretFunc: 804846b => 0804846b => \x6b\x84\x04\x08.
 #### Step3: Generate a buffer overflow with python scripting
+![Alt text](./images/1.3.4.png)
 [[Ảnh 1.3.4](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.4.png)
 #### Result:
+![Alt text](./images/1.3.5.png)
 [[Ảnh 1.3.5](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 # Task 2: Code injection (file delete)
+![Alt text](./images/2.1.png)
 [[Ảnh 2.1](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
+![Alt text](./images/2.2.png)
 [[Ảnh 2.2](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 ### Idea:
@@ -105,30 +131,37 @@ The memory address of function secretFunc: 804846b => 0804846b => \x6b\x84\x04\x
 - Turn off aslr
 - Compile gcc with no stack protector and some assembly code beautify referrence
 - Create link to zsh instead of default dash to turn off bash countermeasures
+![Alt text](./images/2.3.png)
 [[Ảnh 2.3](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.2.png)
 #### Step 2: Compile And Generate Shellcode
+![Alt text](./images/2.4.png)
 [[Ảnh 2.4](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.3.png)
 
 ##### Note: Program’s size = 36 bytes 
 - 64 bytes + 4 ebp’s bytes – 36bytes = 32 (‘a’ bytes)
 
-#### Step3: Conducting the attack in gdb
+#### Step 3: Conducting the attack in gdb
 - 3.1: Add a break point after esp back to top of stack for re-checking our shellcode injection
+![Alt text](./images/2.5.png)
 [[Ảnh 2.5](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.4.png)
 - 3.2 Inject our code with padding 
+![Alt text](./images/2.6.png)
 [[Ảnh 2.6](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.4.png)
 #### Solution: Rewrite our assambly
+![Alt text](./images/2.7.png)
 [[Ảnh 2.7](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 #### Step 1: Re-compile our assembly code after Rewriting 
+![Alt text](./images/2.8.png)
 [[Ảnh 2.8](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
 
 Note: \x0a\x00 has dissappeard 
 #### Step 2: Trying testing our modified shellcode by creating new dummyfile and delete it 
+![Alt text](./images/2.9.png)
 [[Ảnh 2.9](http://https://vi.wikipedia.org/wiki/Markdown)
 ](https://github.com/TranVanThien111/InformationSecurityLab/blob/main/Lab01/Images/1.1.5.png)
